@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Cleaner - Smart Web Tools</title>
+    <meta name="description" content="Rimuovi tracking e parametri inutili dai link">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container fade-in">
+        <header class="tool-header">
+            <a href="../index.html" class="back-link">← Torna alla home</a>
+            <h1 class="tool-title">Link Cleaner</h1>
+            <p class="subtitle">Rimuovi tracking e parametri inutili dai link</p>
+        </header>
+
+        <main class="tool-workspace glass-panel slide-up delay-1">
+            <div style="margin-bottom: 1rem;">
+                <label class="stat-label">Link Originale (da pulire)</label>
+                <input type="text" id="linkInput" placeholder="Incolla URL qui...">
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <label class="stat-label">Nuovo Link (Custom Slug - opzionale)</label>
+                <input type="text" id="linkSlug" placeholder="es. mia-promo-2024">
+            </div>
+            
+            <div class="btn-group" style="margin-bottom: 1.5rem;">
+                <button class="btn btn-primary" id="btnClean">Pulisci Link</button>
+                <button class="btn" id="btnShorten">Pulisci & Accorcia (Short.io)</button>
+            </div>
+
+            <div class="btn-group" style="margin-bottom: 1.5rem;">
+                <label for="qrSource" class="stat-label" style="margin-right: .5rem;">Fonte QR:</label>
+                <select id="qrSource" style="flex:1; min-width: 160px;">
+                    <option value="clean">Link pulito</option>
+                    <option value="short">Link accorciato</option>
+                </select>
+                <button class="btn" id="btnGenerateQR">Genera QR Code</button>
+            </div>
+
+            <!-- Result Box -->
+            <div id="resultContainer" class="result-box">
+                <div id="cleanSection" style="margin-bottom: 1rem;">
+                    <span class="stat-label">Link Pulito:</span>
+                    <strong class="result-link" id="cleanedLink"></strong>
+                </div>
+                <div id="shortSection" style="margin-bottom: 1rem; display: none; border-top: 1px solid var(--glass-border); padding-top: 1rem;">
+                    <span class="stat-label">Link Accorciato (Short.io):</span>
+                    <strong class="result-link" style="color: var(--accent);" id="shortenedLink"></strong>
+                </div>
+                <div class="btn-group">
+                    <button class="btn" id="btnCopyLink">Copia link pulito</button>
+                    <button class="btn" id="btnCopyShort" style="display: none;">Copia link corto</button>
+                </div>
+                <div id="qrContainer" style="display: none; margin-top: 1rem; text-align:center;">
+                    <img id="qrCodeImage" alt="QR Code" style="max-width: 260px; max-height: 260px; border: 1px solid var(--glass-border); border-radius: 8px;">
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Azione completata!</div>
+
+    <script src="../main.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

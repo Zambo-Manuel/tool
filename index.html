@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Web Tools</title>
+    <meta name="description" content="Piccoli strumenti utili per lavorare meglio online">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login-overlay" class="login-overlay">
+        <div class="login-panel glass-panel">
+            <h2>Accesso obbligatorio</h2>
+            <p>Inserisci le credenziali per accedere agli strumenti.</p>
+            <form id="login-form">
+                <label for="login-username">Utente</label>
+                <input id="login-username" type="text" placeholder="Manuel Zambelli" required>
+
+                <label for="login-password">Password</label>
+                <input id="login-password" type="password" placeholder="********" required>
+
+                <button type="submit" class="btn btn-primary">Entra</button>
+                <p id="login-error" class="login-error" aria-live="polite"></p>
+            </form>
+            <small>Utente: Manuel Zambelli | Password: (hash SHA-256 verificata)</small>
+        </div>
+    </div>
+
+    <div id="app-content" class="container center-all hidden">
+        <header class="slide-up">
+            <h1>Smart Web Tools</h1>
+            <p class="subtitle">Piccoli strumenti utili per lavorare meglio online.</p>
+        </header>
+
+        <main class="cards-grid">
+            <!-- Card 1: Text Cleaner -->
+            <a href="text-cleaner/index.html" class="card glass-panel slide-up delay-1">
+                <h2>Text Cleaner</h2>
+                <p>Pulisci e formatta il testo in pochi secondi. Rimuovi spazi extra, linee vuote e molto altro.</p>
+            </a>
+
+            <!-- Card 2: Image Compressor -->
+            <a href="image-compressor/index.html" class="card glass-panel slide-up delay-2">
+                <h2>Image Compressor</h2>
+                <p>Riduci il peso delle immagini (JPG, PNG, WEBP) mantenendo alta la qualità. Perfetto per il web.</p>
+            </a>
+
+            <!-- Card 3: Link Cleaner -->
+            <a href="link-cleaner/index.html" class="card glass-panel slide-up delay-3">
+                <h2>Link Cleaner</h2>
+                <p>Rimuovi parametri di tracking invisibili e inutili dai link per avere URL puliti e sicuri da condividere.</p>
+            </a>
+        </main>
+    </div>
+
+    <!-- Toast Notification (used globally by main.js if needed) -->
+    <div id="toast" class="toast">Azione completata!</div>
+
+    <script src="main.js"></script>
+</body>
+</html>

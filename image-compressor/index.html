@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Compressor - Smart Web Tools</title>
+    <meta name="description" content="Riduci il peso delle immagini mantenendo la qualità">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container fade-in">
+        <header class="tool-header">
+            <a href="../index.html" class="back-link">← Torna alla home</a>
+            <h1 class="tool-title">Image Compressor</h1>
+            <p class="subtitle">Riduci il peso delle immagini e cambia formato (JPG, PNG, WEBP, SVG) mantenendo il controllo della qualità</p>
+        </header>
+
+        <main class="tool-workspace glass-panel slide-up delay-1">
+            
+            <div class="format-settings" style="display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; align-items:center;">
+                <label class="stat-label" for="outputFormat">Formato output</label>
+                <select id="outputFormat" style="min-width: 130px;">
+                    <option value="original">Originale</option>
+                    <option value="image/jpeg">JPG</option>
+                    <option value="image/png">PNG</option>
+                    <option value="image/webp" selected>WEBP</option>
+                    <option value="image/svg+xml">SVG</option>
+                </select>
+
+                <label class="stat-label" for="qualityRange">Qualità</label>
+                <input type="range" id="qualityRange" min="0.1" max="1" step="0.05" value="0.7" style="width: 170px;">
+                <span id="qualityValue">70%</span>
+            </div>
+
+            <div id="dropZone" class="upload-area">
+                <input type="file" id="imageInput" accept="image/jpeg, image/png, image/webp, image/svg+xml" style="display: none;">
+                <div class="upload-icon">📸</div>
+                <h3>Trascina un'immagine qui</h3>
+                <p style="color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 1.5rem;">oppure</p>
+                <button class="btn" onclick="document.getElementById('imageInput').click()">Scegli Immagine</button>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div id="loader" class="loader"></div>
+
+            <!-- Preview & Stats -->
+            <div id="imagePreviewContainer" class="fade-in">
+                <div class="results-area" style="width: 100%; border: none; margin-top: 0; padding-top: 0;">
+                    <div class="stat-box">
+                        <span class="stat-label">Dimensione Originale</span>
+                        <span class="stat-value" id="originalSize">0 KB</span>
+                    </div>
+                    <div class="stat-box" style="text-align: right;">
+                        <span class="stat-label">Dimensione Compressa</span>
+                        <span class="stat-value" id="compressedSize" style="color: var(--success);">0 KB</span>
+                    </div>
+                </div>
+
+                <img id="compressedPreview" src="" alt="Anteprima">
+                
+                <div class="btn-group" style="margin-top: 1rem; width: 100%;">
+                    <button class="btn btn-primary" id="btnDownload" style="width: 100%;">Scarica Immagine Compressa</button>
+                    <button class="btn" id="btnReset" style="width: 100%;">Comprimi un'altra immagine</button>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Azione completata!</div>
+
+    <script src="../main.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

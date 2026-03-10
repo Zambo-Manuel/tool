@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Cleaner - Smart Web Tools</title>
+    <meta name="description" content="Pulisci e formatta il testo in pochi secondi">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container fade-in">
+        <header class="tool-header">
+            <a href="../index.html" class="back-link">← Torna alla home</a>
+            <h1 class="tool-title">Text Cleaner</h1>
+            <p class="subtitle">Pulisci e formatta il testo in pochi secondi</p>
+        </header>
+
+        <main class="tool-workspace glass-panel slide-up delay-1">
+            <textarea id="textInput" placeholder="Incolla qui il tuo testo da pulire..."></textarea>
+            
+            <div class="results-area" style="border-top: none; margin-top: 0; padding-top: 0; margin-bottom: 1.5rem;">
+                <div class="stat-box">
+                    <span class="stat-label">Parole</span>
+                    <span class="stat-value" id="wordCount">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Caratteri</span>
+                    <span class="stat-value" id="charCount">0</span>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn" id="btnRemoveSpaces">Rimuovi Spazi Doppi</button>
+                <button class="btn" id="btnRemoveLines">Rimuovi Linee Vuote</button>
+                <button class="btn" id="btnLowercase">Minuscolo</button>
+                <button class="btn" id="btnUppercase">Maiuscolo</button>
+                <button class="btn btn-primary" id="btnCopy">Copia Testo</button>
+                <button class="btn" id="btnClear" style="color: var(--danger); border-color: rgba(239, 68, 68, 0.3);">Pulisci Tutto</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Azione completata!</div>
+
+    <script src="../main.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
