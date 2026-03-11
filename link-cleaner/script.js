@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnShorten.innerHTML = '<div class="loader active"></div> Attendi...';
 
         try {
-            const response = await fetch('https://api.short.io/links', {
+            const response = await fetch('https://api.short.io/links/public', {
                 method: 'POST',
                 headers: {
                     'accept': 'application/json',
