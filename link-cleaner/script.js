@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const qrCodeImage = document.getElementById('qrCodeImage');
 
     // Embed Short.io configuration in code (no manual settings panel)
-    const shortIoApiKey = 'sk_wIB0hTNRL6XteAJi';
+    const shortIoApiKey = 'pk_pHYFsQ9Z4dlxyROe';
     const shortIoDomain = 'link.manuelzambelli.it';
 
     // Optional: se vuoi mantenere fallback, puoi inserire qui una logica per leggere da localStorage
